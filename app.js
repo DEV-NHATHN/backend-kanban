@@ -23,4 +23,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/v1', require('./src/v1/routes'));
 
+app.get('/demo', async (req, res) => {
+   try {
+      res.send('Hello World');
+   } catch (error) {
+      res.status(500).send(error);
+   }
+})
 module.exports = app;
