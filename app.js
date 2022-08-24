@@ -5,7 +5,7 @@ const logger = require('morgan');
 const cors = require('cors')
 
 var corsOptions = {
-   origin: ['http://localhost:3000', 'https://m2-ecommerce-shop-tahn-0102.vercel.app'],
+   origin: ['http://localhost:3000', 'https://kanban-typescript.vercel.app'],
    // origin: ,
    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
@@ -13,8 +13,7 @@ var corsOptions = {
 
 const app = express();
 
-// app.use(cors(corsOptions))
-app.options('*', cors())
+app.use(cors(corsOptions))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
