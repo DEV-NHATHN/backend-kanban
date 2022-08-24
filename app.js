@@ -4,9 +4,16 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors')
 
+var corsOptions = {
+   origin: ['http://localhost:3000', 'https://m2-ecommerce-shop-tahn-0102.vercel.app'],
+   // origin: ,
+   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+   methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
+}
+
 const app = express();
 
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
