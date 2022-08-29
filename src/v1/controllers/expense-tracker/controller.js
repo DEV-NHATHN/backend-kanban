@@ -2,8 +2,8 @@ const model = require('../../models/expense-tracker/model');
 
 async function create_Categories(req, res) {
    const Create = new model.Categories({
-      type: 'Investment',
-      color: '#fcbe44',
+      type: req.body.type,
+      color: req.body.color,
    });
 
    await Create.save((err, data) => {
@@ -64,10 +64,10 @@ async function get_Transaction(req, res) {
 
 async function delete_Transaction(req, res) {
    if (!req.body) return res.status(400).json("Post HTTP Data not Provided");
+   if (!req.body._id) return res.status(400).json("_id not Provided");
 
-   const { id } = req.body;
    try {
-      await model.Transaction.findByIdAndDelete(id);
+      await model.Transaction.findByIdAndDelete({ _id: req.body._id });
       return res.status(200).json('Delete Successful');
    } catch (err) {
       return res.status(500).json(err.message || 'Error in Deleting Record');

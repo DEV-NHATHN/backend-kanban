@@ -22,10 +22,24 @@ DELETE {{baseUrl}}/expense-tracker/transaction
 Content-Type: application/json
 
 {
-  "id": "630c685b2f71231450defea"
+  "_id": "630c7f4bcfb053af6f9a581d"
 }
 
 
 ###
 
 GET {{baseUrl}}/expense-tracker/labels
+
+
+
+
+###
+
+
+POST {{baseUrl}}/expense-tracker/categories
+Content-Type: application/json
+
+{
+  "type": "Savings",
+  "color": "#36A2EB"
+}
