@@ -5,7 +5,7 @@ const logger = require('morgan');
 const cors = require('cors')
 
 var corsOptions = {
-   origin: ['http://localhost:3000', 'https://kanban-typescript.vercel.app'],
+   origin: ['http://localhost:3000', 'https://kanban-typescript.vercel.app', 'https://expense-tracker-app-omega.vercel.app'],
    // origin: ,
    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
