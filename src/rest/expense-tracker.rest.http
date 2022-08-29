@@ -1,0 +1,31 @@
+@baseUrl = http://localhost:5000/api/v1
+
+
+GET {{baseUrl}}/expense-tracker/transaction
+
+###
+
+
+POST {{baseUrl}}/expense-tracker/transaction
+Content-Type: application/json
+
+{
+  "name": "Salary",
+  "type": "Investment",
+  "amount": 300
+}
+
+###
+
+
+DELETE {{baseUrl}}/expense-tracker/transaction
+Content-Type: application/json
+
+{
+  "id": "630c685b2f71231450defea"
+}
+
+
+###
+
+GET {{baseUrl}}/expense-tracker/labels
